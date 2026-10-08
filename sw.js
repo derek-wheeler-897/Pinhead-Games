@@ -1,5 +1,5 @@
-const C='pinhead-games-v6';
-const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const C='pinhead-games-v7';
+const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.jpg','./icon-512.jpg','./apple-touch-icon.jpg','./splash-small.jpg'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(
