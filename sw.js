@@ -1,12 +1,11 @@
-const C='pinhead-games-v7';
-const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.jpg','./icon-512.jpg','./apple-touch-icon.jpg','./splash-small.jpg'];
+const C='pinhead-games-v8';
+const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.jpg','./splash-small.jpg'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(
     caches.open(C).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())
   );
 });
-
 self.addEventListener('activate',event=>{
   event.waitUntil(
     caches.keys().then(keys=>Promise.all(
@@ -14,7 +13,6 @@ self.addEventListener('activate',event=>{
     )).then(()=>self.clients.claim())
   );
 });
-
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET') return;
   event.respondWith(
