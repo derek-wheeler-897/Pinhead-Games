@@ -1,4 +1,4 @@
-const C='pinhead-games-selectable-golf-v1';;
+const C='pinhead-games-addgame-fix-v1';;
 const ASSETS=['./','./index.html','./manifest.webmanifest','./pinhead-splash.webp','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
 
 self.addEventListener('install',event=>{
