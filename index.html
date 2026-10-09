@@ -246,6 +246,20 @@ var BOWLS=[
 ["Dungeons & Dragons: The Tyrant's Eye Premium",100000000],['Avengers: Infinity Quest Premium',25000000],
 ['Godzilla Premium',35000000],['Gottlieb Joker Poker',150000],['Williams Spanish Eyes',25000],['Bally Mata Hari',250000]
 ];
+// Add every Pin Golf catalog machine to Pin Bowling. The nine original targets
+// remain unchanged; catalog-only machines receive a consistent era-based starting target.
+function bowlingMachineKey(name){return String(name).toLowerCase().replace(/\s*\((bally|gottlieb|williams|stern|data east|capcom)\)\s*$/i,'').replace(/^(bally|gottlieb|williams|stern|data east|capcom)\s+/i,'').replace(/[^a-z0-9]+/g,' ').trim()}
+var BOWLING_ERA_TARGETS={'1970s':100000,'1980s':2000000,'1990s':25000000,'2000s':30000000};
+var bowlingKeys=BOWLS.map(function(game){return bowlingMachineKey(game[0])});
+ERA_GAME_CATALOG.forEach(function(group){
+  var target=BOWLING_ERA_TARGETS[group.era]||25000000;
+  group.games.forEach(function(name){
+    var key=bowlingMachineKey(name);
+    if(bowlingKeys.indexOf(key)>=0)return;
+    BOWLS.push([name,target]);
+    bowlingKeys.push(key);
+  });
+});
 var S={p:['','','',''],course:[],go:[],gb5:[],gStarted:false,g:[],b:Array.from({length:10},function(){return [null,null,null,null].map(function(){return {b1:null,b2:null,b3:null,result:null}})}),bm:Array(10).fill(null),gt:null,bt:null};var MODE='g';
 function $(id){return document.getElementById(id)}
 function esc(x){return String(x).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]})}
