@@ -205,3 +205,72 @@ var classicRules2={
   
 return Object.assign({},classicRules,classicRules2);
 })();
+
+window.PinheadRulePacks=Object.assign(window.PinheadRulePacks||{},(function(){var p={
+'attack from mars':[
+['Complete MARTIAN','Complete the MARTIAN target sequence.','Hit the MAR targets and the T, I and AN targets; track the letters until MARTIAN is complete.'],
+['Lower the saucer force field','Hit all three force-field targets in front of the saucer.','Clear the three force-field targets; the field drops and Attack Phase begins.'],
+['Destroy a flying saucer','Damage the saucer targets, then shoot the hole behind the rear drop target.','During Attack Phase, hit the inner saucer targets until the rear drop stays down, then shoot the hole.'],
+['Complete an Attack Phase','Destroy one country’s flying saucer.','Lower the force field, hit the exposed saucer targets, then finish with the hole shot.'],
+['Start Martian Attack','Qualify Martian Attack and collect it at the scoop.','Complete the Martian targets or qualify the feature through Stroke of Luck, then shoot the scoop.'],
+['Defeat all four Martians','Hit all four dancing Martians before the timer expires.','Hit the target bank beneath each Martian during the timed mode.'],
+['Start regular multiball','Lock three balls at the middle orbit.','Shoot the middle orbit to light lock, then lock three balls; the third lock starts multiball.'],
+['Collect a Super Jackpot','Collect all regular jackpots, then hit the moving Super Jackpot.','During multiball, complete the lit left orbit, left ramp, middle orbit, right ramp and right orbit jackpots; then chase the moving Super Jackpot.'],
+['Complete Total Annihilation','Complete Capture, Big-O-Beam, Tractor Beam and Atomic Blaster.','Make three shots each at the left orbit, left ramp, right ramp and right orbit; then complete the saucer hurry-up.'],
+['Rule the Universe','Complete the required major features and start Rule the Universe.','This expert goal requires a Super Jackpot, Super Jets, Martian Attack multiball, Total Annihilation, conquering Mars, and a five-way combo.']],
+'big bang bar':[
+['Complete B-A-R','Collect all three B-A-R rollover lanes.','Use lane change to aim for the unlit letter; completing all three advances bonus multiplier up to 5×.'],
+['Qualify a Bar Room Brawl mode','Clear the center three-bank, then shoot the ramp.','The center bank qualifies the next mode; the ramp starts the selected mode.'],
+['Complete Mash A Go-Go','Start Mash A Go-Go and complete its bumper objective.','Qualify the mode, shoot the ramp, then work the pop bumpers as instructed by the display.'],
+['Complete Cosmic Dartz','Start Cosmic Dartz and finish its dart challenge.','Qualify Cosmic Dartz, shoot the ramp to start, and follow the display prompts.'],
+['Start Looped in Space','Clear the left four-bank and lock a ball.','The left four-bank enables the left alien-ball lock; finish it and shoot the lit lock.'],
+['Start Multi-brawl','Spell B-R-A-W-L on the captive-ball feature and complete the lock sequence.','Hit the flashing side of the four-ball captive-ball turnaround to collect letters; complete BRAWL and follow the lock lamps.'],
+['Light Tube Dancer','Hit all three green stand-up targets.','The three green stand-ups around the ramp and upper orbit qualify Tube Dancer.'],
+['Collect a Tube Dance jackpot','Shoot the ramp while Tube Dancer is active.','When the tube dancer is lit and dancing, the ramp becomes the jackpot shot.'],
+['Collect an Underground award','Hit the Doorman drop target while Underground is qualified.','The Doorman is the single drop below the BAR lanes; shoot it when Underground is active.'],
+['Start The Big Bang','Complete the other modes/features, then hit the Doorman target.','The Big Bang is the ultimate challenge; finish the other modes/features and shoot the Doorman when lit.']],
+'cirqus voltaire':[
+['Raise the Ringmaster','Qualify and raise the Ringmaster toy.','Work the Ringmaster feature and follow the display/insert sequence.'],
+['Start Ringmaster Frenzie','Qualify and start Ringmaster Frenzie.','Shoot the required Ringmaster shots and confirm Frenzie starts on the display.'],
+['Defeat the Ringmaster','Complete Ringmaster Battle by hitting the Ringmaster repeatedly.','After the fifth Ringmaster is defeated, keep hitting him; long gaps let him recover progress.'],
+['Complete Strike-an-Arc','Complete the Strike-an-Arc feature.','Follow the lit feature shots and display instructions to advance Strike-an-Arc.'],
+['Start multiball','Qualify and start a named Cirqus multiball.','Follow the active lock/multiball inserts and use the indicated shot to start it.'],
+['Complete one Marvel','Finish one of the game’s Marvel features.','Watch the display for the current Marvel objective and complete its required shots; starting alone does not count.'],
+['Complete three Marvels','Finish three different Marvel features in one game.','Track which Marvels are completed and choose available ones; confirm each completion on the display.'],
+['Start Ringmaster Battle multiball','Defeat the fifth Ringmaster and start the battle.','Ringmaster Battle begins after the fifth Ringmaster; keep hitting the toy to prevent recovery.'],
+['Defeat the Ringmaster in battle','Finish Ringmaster Battle and defeat the Ringmaster.','Keep both balls available and continue landing Ringmaster hits; the battle is not completed merely by starting it.'],
+['Join the Cirqus','Complete the required Marvels to start Join the Cirqus.','Finish the Marvel collection and follow the display’s final wizard-mode sequence.']],
+'funhouse':[
+['Advance the clock to midnight','Advance the clock to 12:00.','Use the clock-advancing shots and track the clock; midnight qualifies the Rudy mouth lock.'],
+['Start Midnight Multiball','Lock a ball in Rudy’s open mouth at midnight.','When the clock reads midnight and Rudy opens his mouth, shoot the mouth to lock the ball and start multiball.'],
+['Score a Rudy Gulp','Shoot into Rudy’s open mouth while he is talking.','Listen for Rudy’s speech and shoot during the open-mouth window.'],
+['Hit Rudy’s jaw','Hit Rudy’s jaw from the side flipper.','A jaw hit adds end-of-ball bonus and relights the Mirror award.'],
+['Collect the Mirror award','Relight and collect the Mirror feature.','Hit Rudy’s jaw to relight Mirror, then shoot the Mirror feature when available.'],
+['Make the trapdoor loop','Make a successful trapdoor loop shot.','Aim for the trapdoor loop and verify the feature registers.'],
+['Reach 11:30 twice','Advance the clock to 11:30 for a second time.','The second arrival lights the outlane Special lamps; collect the lit award before the ball ends.'],
+['Collect an outlane Special','Drain through an outlane while its Special lamp is lit.','After the second 11:30, slingshot hits toggle the Special lamps; the award must be collected before the ball ends.'],
+['Hit Rudy’s jaw three times','Make three Rudy jaw hits in one game.','Use the side flipper to hit the jaw and track the bonus progression.'],
+['Start and score Midnight Multiball','Start Midnight Multiball and score a feature shot during it.','Lock the ball in Rudy’s mouth at midnight, then make a lit shot while both balls are active.']],
+'medieval madness':[
+['Destroy a castle','Lower the drawbridge, raise the gate, then shoot the Main Entrance.','Hit the Drawbridge the required number of times, hit the lowered Gate the required number, then shoot the entrance.'],
+['Destroy two castles','Destroy two different castles during one game.','Repeat the drawbridge, gate and entrance sequence for the next castle.'],
+['Collect a Castle Hurry-Up','Complete a required row of lights and collect at the Main Entrance.','The hurry-up counts down quickly; shoot the Main Entrance before it expires.'],
+['Start Trolls!','Qualify and start Trolls!','Follow the troll-feature lamps and display prompts until the mode starts.'],
+['Start Multiball Madness','Complete the required feature qualification and start Multiball Madness.','Follow the multiball inserts and make the lit start shot; verify the mode name on the display.'],
+['Start Royal Madness','Progress through the required castle and multiball features to start Royal Madness.','Complete the preceding wizard-mode requirements and follow the final qualification on the display.'],
+['Collect a Merlin award','Shoot Merlin’s saucer while an award is lit.','Use the lit saucer to collect the available award, including an extra ball when qualified.'],
+['Light Castle Crusher','Destroy all six castles, including the King of Payne’s castle.','Repeat the drawbridge, gate and Main Entrance sequence; the King’s castle is last and takes more hits.'],
+['Start Battle for the Kingdom','Complete the Castle Crusher requirements and start the final battle.','Finish the castle progression and follow the Battle for the Kingdom start indication.'],
+['Collect the castle extra ball','Destroy the required castles and collect the lit extra ball at Merlin’s saucer.','The default rules light an extra ball after two castles; shoot Merlin’s saucer while the award is lit.']],
+'scared stiff':[
+['Start a tale','Start one of the six tales.','Use the tale’s qualifying shots and start feature; confirm the tale begins on the display.'],
+['Complete all six tales','Start all six tales to qualify Scared Stiff.','Track the six tale lamps and complete each tale’s required shots; finishing all six lights the crate.'],
+['Start Scared Stiff','After all six tales, hit the crate.','Once all six tale lamps are complete, shoot the crate and confirm the Stiff-O-Meter starts.'],
+['Advance the Stiff-O-Meter','Complete one alternating ramp/crate step.','The sequence alternates ramp, crate, ramp, crate; follow the order shown by the feature.'],
+['Max the Stiff-O-Meter','Advance the meter to level 10.','Keep alternating ramp and crate shots until the meter reaches its top level.'],
+['Collect the Stiff-O-Meter award','Hit the crate to collect the current meter award.','During the crate mode, the meter rises and falls; shoot the crate to collect the current multiplied value.'],
+['Collect the left-ramp jackpot','Light the left-ramp jackpot and shoot the ramp.','A Stiff-O-Meter award can light the left ramp for a 250K jackpot; collect it while lit.'],
+['Collect all three Eye awards','Complete the three Eye awards.','Track each Eye award and finish the missing requirements; all three Eyes light an extra ball.'],
+['Collect Double Trouble','Activate Double Trouble and score during its 20-second window.','Every shot is doubled for 20 seconds; prioritize safe repeatable shots while the timer runs.'],
+['Start Scared Stiff and reach level 10','Start the mode and max the Stiff-O-Meter.','Complete all six tales, hit the crate, then alternate ramp and crate shots until level 10.']]
+};return p;})());
