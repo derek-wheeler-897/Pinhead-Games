@@ -1,5 +1,5 @@
-const C='pinhead-games-full-objective-catalog-v1';;
-const ASSETS=['./','./index.html','./manifest.webmanifest','./pinhead-splash.webp','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
+const C='pinhead-games-sourced-objective-packs-v2';;
+const ASSETS=['./','./index.html','./manifest.webmanifest','./pinhead-splash.webp','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./objective-packs.js','./objective-packs-2.js'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(
