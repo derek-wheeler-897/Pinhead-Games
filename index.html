@@ -290,9 +290,12 @@ BOWLS.forEach(function(game){
   var key=bowlingMachineKey(game[0]);
   if(Object.prototype.hasOwnProperty.call(BOWLING_TARGET_OVERRIDES,key))game[1]=BOWLING_TARGET_OVERRIDES[key];
 });
-// Bowling frames use only two regular balls. The former targets represented a strong
-// full-game score, so halve them to make the 1–10 pin scale attainable across two balls.
-BOWLS.forEach(function(game){game[1]=Math.max(1,Math.round(game[1]/2))});
+// Pin Golf-style Bowling is a two-ball challenge. Benchmarks should reflect a
+// normal player's achievable score on one ball, not a strong full-game total.
+// Apply a further 5x reduction to the previous targets (10x below the original full-game
+// benchmarks); per-title and era differences are retained. These are practical starting
+// thresholds and should be refined with scores collected from ordinary local players.
+BOWLS.forEach(function(game){game[1]=Math.max(1,Math.round(game[1]/10))});
 var S={p:['','','',''],course:[],go:[],gb5:[],gStarted:false,g:[],b:Array.from({length:10},function(){return [null,null,null,null].map(function(){return {b1:null,b2:null,b3:null,result:null}})}),bm:Array(10).fill(null),gt:null,bt:null};var MODE='g';
 function $(id){return document.getElementById(id)}
 function esc(x){return String(x).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]})}
