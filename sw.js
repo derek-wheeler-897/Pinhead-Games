@@ -1,4 +1,4 @@
-const C='pinhead-games-all-games-bowling-v6';;
+const C='pinhead-games-clear-fix-v7';;
 const ASSETS=['./','./index.html','./manifest.webmanifest','./pinhead-splash.webp','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./objective-packs.js','./objective-packs-2.js'];
 
 self.addEventListener('install',event=>{
