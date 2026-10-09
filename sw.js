@@ -1,4 +1,4 @@
-const C='pinhead-games-full-test-fixes-v1';;
+const C='pinhead-games-full-test-fixes-v2';;
 const ASSETS=['./','./index.html','./manifest.webmanifest','./pinhead-splash.webp','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./objective-packs.js','./objective-packs-2.js'];
 
 self.addEventListener('install',event=>{
