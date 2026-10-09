@@ -42,6 +42,7 @@ button.danger{background:linear-gradient(135deg,#6a263d,#461b2b);border-color:rg
 .tabs button:hover{background:rgba(255,255,255,.045);color:var(--text);transform:none;filter:none}
 .tabs button.active{background:linear-gradient(135deg,rgba(103,232,249,.98),rgba(96,165,250,.96));color:#041019;box-shadow:0 8px 22px rgba(96,165,250,.2)}
 .objective{position:relative;border:1px solid rgba(148,163,184,.16);border-radius:16px;background:linear-gradient(145deg,rgba(14,24,42,.92),rgba(9,16,29,.94));padding:14px;margin:11px 0;box-shadow:var(--shadow-soft);transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.objective:has(.tipwrap:hover),.objective:has(.tipwrap:focus-within),.objective:has(.tipwrap.open){z-index:100}
 .objective:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:16px 0 0 16px;background:linear-gradient(180deg,var(--accent),rgba(96,165,250,.15))}
 .objective:hover{border-color:rgba(103,232,249,.25);transform:translateY(-1px);box-shadow:0 15px 35px rgba(0,0,0,.2)}
 .objtop{display:grid;grid-template-columns:50px 1.25fr 1.7fr 1fr 1fr 1fr 1fr;gap:11px;align-items:center}
