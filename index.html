@@ -136,7 +136,7 @@ var GAMES=[
 {name:'Williams Spanish Eyes',obj:'Complete A-B-C-D-E',how:'Make the five top rollover lanes marked A, B, C, D and E.'},
 {name:'Bally Mata Hari',obj:'Hit the Top Saucer 3 Times',how:'Make three separate upper kickout saucer hits during the same ball. The third hit completes the objective.'}
 ];
-function catalogBaseName(label){return String(label).replace(/\s+\((Bally|Gottlieb|Williams|Stern|Data East|Capcom)\)$/,'').trim()}
+function catalogBaseName(label){return String(label).replace(/\s+\((Bally|Gottlieb|Williams|Stern|Data East|Capcom|Game Plan|Spooky)\)$/,'').trim()}
 function normalizedMachineName(label){return String(label).replace(/^(Bally|Gottlieb|Williams|Stern|Data East|Capcom)\s+/,'').trim().toLowerCase()}
 var CATALOG_GAME_LABELS=[];
 ERA_GAME_CATALOG.forEach(function(group){group.games.forEach(function(label){if(CATALOG_GAME_LABELS.indexOf(label)<0)CATALOG_GAME_LABELS.push(label)})});
@@ -394,8 +394,8 @@ var BOWLS=[
 // Pin Bowling benchmark targets: the target is a strong one-ball score that earns 10 pins.
 // Defaults reflect the broad scoring scale of each era; title-specific values below refine them.
 // These are tournament starting benchmarks, not official records or universal averages.
-function bowlingMachineKey(name){return String(name).toLowerCase().replace(/\s*\((bally|gottlieb|williams|stern|data east|capcom)\)\s*$/i,'').replace(/^(bally|gottlieb|williams|stern|data east|capcom)\s+/i,'').replace(/[^a-z0-9]+/g,' ').trim()}
-var BOWLING_ERA_TARGETS={'1970s':100000,'1980s':10000000,'1990s':300000000,'2000s':500000000};
+function bowlingMachineKey(name){return String(name).toLowerCase().replace(/\s*\((bally|gottlieb|williams|stern|data east|capcom|game plan|spooky)\)\s*$/i,'').replace(/^(bally|gottlieb|williams|stern|data east|capcom|game plan|spooky)\s+/i,'').replace(/[^a-z0-9]+/g,' ').trim()}
+var BOWLING_ERA_TARGETS={'1970s':100000,'1980s':10000000,'1990s':300000000,'2000s':500000000,'2010s':1000000000};
 var BOWLING_TARGET_OVERRIDES={
   'james bond 007 premium':500000000,'jaws premium':500000000,'metallica premium':500000000,
   'dungeons dragons the tyrant s eye premium':1000000000,'avengers infinity quest premium':500000000,'godzilla premium':750000000,
