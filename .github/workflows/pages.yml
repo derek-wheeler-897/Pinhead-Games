@@ -26,9 +26,9 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq imagemagick webp
           base64 -d assets/pinhead-q80.b64 > pinhead-splash.webp
-          convert pinhead-splash.webp -filter Lanczos -resize 192x192^ -gravity center -extent 192x192 -strip -colorspace sRGB icon-192.png
-          convert pinhead-splash.webp -filter Lanczos -resize 512x512^ -gravity center -extent 512x512 -strip -colorspace sRGB icon-512.png
-          convert pinhead-splash.webp -filter Lanczos -resize 180x180^ -gravity center -extent 180x180 -strip -colorspace sRGB apple-touch-icon.png
+          convert pinhead-splash.webp -filter Lanczos -resize 192x192 -background '#080d18' -gravity center -extent 192x192 -strip -colorspace sRGB icon-192.png
+          convert pinhead-splash.webp -filter Lanczos -resize 512x512 -background '#080d18' -gravity center -extent 512x512 -strip -colorspace sRGB icon-512.png
+          convert pinhead-splash.webp -filter Lanczos -resize 180x180 -background '#080d18' -gravity center -extent 180x180 -strip -colorspace sRGB apple-touch-icon.png
           rm -rf assets/pinhead-q80.b64
       - uses: actions/upload-pages-artifact@v4
         with:
