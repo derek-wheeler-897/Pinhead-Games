@@ -132,6 +132,176 @@ button.danger{color:#fff5f8;background:linear-gradient(120deg,#ff6f9e,#c54d8c);b
 @media(max-width:450px){header h1{font-size:26px}header .muted{font-size:12px}.players{grid-template-columns:1fr 1fr}.tabs button{font-size:12px;letter-spacing:-.025em}.card{padding:14px;border-radius:18px}.legend{gap:6px}.legend span{font-size:10px;padding:6px 8px}.binputs{grid-template-columns:1fr}.binputs>:first-child{grid-column:auto}.bowl-head{grid-template-columns:1fr}.bowl-head>:last-child{margin-top:4px}.tipbox{left:auto;right:0}.row>input[type=number]{width:calc(50% - 5px);flex:1}.row>button{max-width:100%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
+
+/* NEON ARCADE THEME — presentation-only overrides. No game logic changes. */
+:root{
+  color-scheme:dark;
+  --bg:#05040b;--bg2:#0b0817;--card:rgba(13,10,27,.94);--card2:rgba(8,7,18,.98);
+  --line:rgba(0,255,220,.23);--line2:rgba(175,90,255,.14);
+  --text:#f7f4ff;--muted:#a5a0bd;--accent:#00ffe1;--accent2:#ff3bd4;
+  --good:#b6ff39;--danger:#ff3b6b;--gold:#ffe45e;
+  --shadow:0 18px 55px rgba(0,0,0,.55);--shadow-soft:0 8px 28px rgba(0,0,0,.38);--radius:18px;
+}
+html{background:#05040b}
+body{
+  font-family:"SF Pro Display",Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:#f7f4ff;letter-spacing:.005em;
+  background:
+    radial-gradient(ellipse at 12% 0%,rgba(0,255,225,.10),transparent 26%),
+    radial-gradient(ellipse at 92% 8%,rgba(255,59,212,.11),transparent 28%),
+    radial-gradient(ellipse at 50% 100%,rgba(110,45,255,.09),transparent 38%),
+    #05040b;
+  background-attachment:fixed;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0px,rgba(255,255,255,.018) 1px,transparent 1px,transparent 4px);
+  opacity:.22;mix-blend-mode:screen;
+}
+body:after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(0,255,225,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,225,.025) 1px,transparent 1px);
+  background-size:38px 38px;mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+main{position:relative;z-index:1;max-width:1260px;padding:22px 18px 56px}
+header{padding:20px 8px 25px;align-items:center}
+header h1{
+  font-family:"Arial Black","SF Pro Display",system-ui,sans-serif;
+  font-weight:950;letter-spacing:-.055em;text-transform:uppercase;
+  text-shadow:0 0 7px rgba(0,255,225,.38),0 0 24px rgba(0,255,225,.15);
+}
+header h1:first-letter{color:var(--accent)}
+header:after{height:2px;background:linear-gradient(90deg,#00ffe1 0%,#9a42ff 52%,#ff3bd4 82%,transparent 100%);box-shadow:0 0 13px rgba(0,255,225,.26)}
+header .muted{letter-spacing:.09em;text-transform:uppercase;font-size:10px;font-weight:750}
+h2{font-size:18px;font-weight:900;letter-spacing:.045em;text-transform:uppercase}
+h3{font-weight:850;letter-spacing:.025em}
+.muted{color:#aaa4c7}
+.card{
+  background:linear-gradient(145deg,rgba(17,12,34,.97),rgba(8,7,19,.98) 72%);
+  border:1px solid rgba(0,255,225,.16);border-radius:18px;
+  box-shadow:0 16px 42px rgba(0,0,0,.44),inset 0 1px 0 rgba(255,255,255,.045);
+  backdrop-filter:blur(18px);
+}
+.card:before{
+  left:18px;right:18px;height:2px;
+  background:linear-gradient(90deg,#00ffe1 0%,#804cff 56%,#ff3bd4 83%,transparent 100%);
+  opacity:.75;
+}
+.card>h2{gap:10px}
+.card>h2:after{height:1px;background:linear-gradient(90deg,rgba(0,255,225,.24),rgba(255,59,212,.12),transparent)}
+.tabs{
+  background:rgba(7,5,17,.92);border:1px solid rgba(0,255,225,.22);border-radius:15px;
+  box-shadow:0 12px 34px rgba(0,0,0,.42),0 0 20px rgba(0,255,225,.035);
+  backdrop-filter:blur(22px);
+}
+.tabs button{
+  color:#9690b6;border:1px solid transparent;border-radius:10px;
+  background:transparent;box-shadow:none;font-weight:850;text-transform:uppercase;
+  letter-spacing:.045em;font-size:12px;
+}
+.tabs button:before{display:none}
+.tabs button:hover{color:#fff;background:rgba(0,255,225,.055);border-color:rgba(0,255,225,.16);transform:none;box-shadow:none}
+.tabs button.active{
+  color:#021310;background:linear-gradient(105deg,#00ffe1,#61ffd0);
+  border-color:rgba(0,255,225,.9);
+  box-shadow:0 0 0 1px rgba(0,255,225,.14),0 0 18px rgba(0,255,225,.2),inset 0 1px 0 rgba(255,255,255,.58);
+}
+button{
+  min-height:43px;border-radius:10px;padding:11px 15px;
+  color:#f7f4ff;font-weight:820;letter-spacing:.02em;
+  border:1px solid rgba(156,123,255,.34);
+  background:linear-gradient(180deg,rgba(39,28,67,.98),rgba(21,15,41,.99));
+  box-shadow:0 5px 0 #05030c,0 8px 17px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.09);
+}
+button:before{content:"";position:absolute;top:0;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent)}
+button:hover{
+  transform:translateY(-1px);border-color:rgba(0,255,225,.72);
+  box-shadow:0 5px 0 #05030c,0 8px 23px rgba(0,0,0,.38),0 0 15px rgba(0,255,225,.10),inset 0 1px 0 rgba(255,255,255,.15);
+  filter:brightness(1.08)
+}
+button:active{transform:translateY(2px);box-shadow:0 2px 0 #05030c,0 3px 10px rgba(0,0,0,.3)}
+button.primary,button.active{
+  color:#031311;background:linear-gradient(110deg,#00ffe1,#7cffc8);
+  border-color:#69fff0;box-shadow:0 4px 0 #07534d,0 0 18px rgba(0,255,225,.16),inset 0 1px 0 rgba(255,255,255,.68);
+}
+button.good{
+  color:#101500;background:linear-gradient(110deg,#d5ff4e,#91ff3d);
+  border-color:rgba(205,255,62,.8);box-shadow:0 4px 0 #40590d,0 0 17px rgba(182,255,57,.12),inset 0 1px 0 rgba(255,255,255,.65)
+}
+button.danger{
+  color:#fff4fa;background:linear-gradient(110deg,#ff3b82,#b329ff);
+  border-color:rgba(255,89,195,.62);box-shadow:0 4px 0 #4b1048,0 0 16px rgba(255,59,212,.12),inset 0 1px 0 rgba(255,255,255,.28)
+}
+.input,select{
+  color:#fbf8ff;background:rgba(5,4,15,.94);border:1px solid rgba(146,117,222,.27);
+  border-radius:10px;box-shadow:inset 0 2px 8px rgba(0,0,0,.28);
+}
+.input::placeholder{color:#716a8d}
+.input:hover,select:hover{border-color:rgba(0,255,225,.48);background:rgba(8,7,20,.98)}
+.input:focus,select:focus{outline:none;border-color:#00ffe1;box-shadow:0 0 0 3px rgba(0,255,225,.10),0 0 15px rgba(0,255,225,.07),inset 0 1px 0 rgba(255,255,255,.04)}
+.players .input{font-weight:700;border-radius:11px}
+.objective,.bframe{
+  background:linear-gradient(120deg,rgba(16,11,32,.99),rgba(8,7,19,.99));
+  border:1px solid rgba(139,99,220,.22);border-radius:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.025);
+}
+.objective:before,.bframe:before{
+  top:12px;bottom:12px;width:3px;border-radius:0 4px 4px 0;
+  background:linear-gradient(180deg,#00ffe1,#8d4dff 56%,#ff3bd4);
+  box-shadow:0 0 10px rgba(0,255,225,.13);
+}
+.objective:hover,.bframe:hover{border-color:rgba(0,255,225,.34);box-shadow:0 10px 27px rgba(0,0,0,.38),0 0 15px rgba(0,255,225,.045)}
+.num{color:#00ffe1;text-shadow:0 0 12px rgba(0,255,225,.35);font-weight:950}
+.game{font-weight:850;color:#f8f4ff}
+.how{color:#a9a0c4}
+.result select{text-align:center;font-weight:850}
+.playerbox{background:rgba(5,4,15,.78);border:1px solid rgba(139,99,220,.2);border-radius:11px}
+.playerbox label{color:#c8bfed;text-transform:uppercase;font-size:11px;letter-spacing:.06em}
+.table{background:rgba(5,4,14,.95);border:1px solid rgba(0,255,225,.16);border-radius:12px}
+.table th{color:#00ffe1;background:rgba(18,13,37,.99);font-size:10px;letter-spacing:.09em}
+.table td,.table th{border-color:rgba(139,99,220,.12)}
+.table tbody tr:nth-child(even) td{background:rgba(139,92,246,.035)}
+.table tbody tr:hover td{background:rgba(0,255,225,.06)}
+.table tbody tr:last-child td{background:rgba(0,255,225,.055)}
+.total{color:#00ffe1;text-shadow:0 0 10px rgba(0,255,225,.16)}
+.legend span{
+  color:#b9b0d4;background:rgba(255,255,255,.025);
+  border:1px solid rgba(139,99,220,.2);border-radius:8px;
+}
+.tipbtn{color:#00ffe1;background:rgba(0,255,225,.055);border:1px solid rgba(0,255,225,.34);box-shadow:none;border-radius:7px}
+.tipbtn:before{display:none}
+.tipbox{background:rgba(8,6,20,.99);border:1px solid rgba(0,255,225,.32);border-radius:12px;box-shadow:0 20px 55px rgba(0,0,0,.62),0 0 20px rgba(0,255,225,.07)}
+.tipbox h4{color:#00ffe1}.tipbox th{background:#17102d}
+.winner{color:#c4ff49;text-shadow:0 0 16px rgba(182,255,57,.2)}
+#result{background:linear-gradient(130deg,rgba(13,38,32,.98),rgba(9,10,24,.99));border-color:rgba(182,255,57,.35);box-shadow:0 14px 40px rgba(0,0,0,.38),0 0 20px rgba(182,255,57,.045)}
+#status{border:1px solid rgba(0,255,225,.12);background:rgba(0,255,225,.035);border-radius:8px}
+.offline-badge{background:rgba(0,255,225,.04);border:1px solid rgba(0,255,225,.22);border-radius:8px;color:#8fffee;font-size:10px;letter-spacing:.04em;text-transform:uppercase}
+.offline-badge.ready{color:#c4ff49;border-color:rgba(182,255,57,.28);background:rgba(182,255,57,.045)}
+.offline-badge.offline{color:#ffe45e;border-color:rgba(255,228,94,.25);background:rgba(255,228,94,.045)}
+#splashScreen{background:#05040b}
+::selection{background:rgba(0,255,225,.28);color:#fff}
+@media(max-width:760px){
+ main{padding:12px 10px 42px}
+ header{padding:13px 3px 19px}
+ header h1{font-size:clamp(25px,7vw,31px)}
+ header .muted{font-size:9px;letter-spacing:.08em}
+ .card{padding:16px;margin:11px 0;border-radius:16px}
+ .tabs{top:4px;padding:4px;gap:4px}
+ .tabs button{font-size:11px;letter-spacing:.025em;min-height:44px;padding:10px 7px}
+ .players{grid-template-columns:1fr 1fr;gap:8px}
+ .players .input{min-height:46px;height:46px;padding:10px}
+ .objective,.bframe{padding:13px 11px}
+ .legend span{font-size:10px;padding:6px 8px}
+}
+@media(max-width:450px){
+ main{padding:9px 8px 34px}
+ header h1{font-size:25px}
+ .card{padding:13px;border-radius:15px}
+ h2{font-size:16px}
+ .tabs button{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
 </style>
 </head>
 <body><div id="splashScreen" aria-label="Pinhead Games loading screen"><img src="./pinhead-splash.webp" alt=""></div><main>
