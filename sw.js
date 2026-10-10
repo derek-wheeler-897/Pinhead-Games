@@ -1,4 +1,4 @@
-const C='pinhead-games-new-catalog-v21';
+const C='pinhead-games-new-catalog-v22';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./objective-packs.js','./objective-packs-2.js'];
 
 self.addEventListener('install',event=>{
