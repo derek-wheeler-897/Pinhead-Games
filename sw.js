@@ -1,5 +1,5 @@
 const C='pinhead-games-new-catalog-v23';
-const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./pinhead-splash.webp','./objective-packs.js','./objective-packs-2.js'];
+const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./pinhead-splash.webp','./apple-touch-icon.png','./objective-packs.js','./objective-packs-2.js'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(
