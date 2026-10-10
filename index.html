@@ -228,6 +228,107 @@ button:disabled,input:disabled,select:disabled{opacity:.52;cursor:not-allowed;fi
   *,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
 
+
+/* Stronger visible arcade redesign — presentation only. */
+:root{
+  --bg:#03040d;--bg2:#0b0a20;--card:rgba(18,17,43,.96);--card2:rgba(8,9,26,.98);
+  --line:rgba(148,126,255,.34);--line2:rgba(135,151,210,.17);
+  --text:#fbfaff;--muted:#b1b7d4;--accent:#42f5e9;--accent2:#a78bfa;
+  --good:#7df7b5;--danger:#ff5c91;--gold:#ffd166;
+  --shadow:0 24px 70px rgba(0,0,0,.55);--shadow-soft:0 12px 34px rgba(0,0,0,.34);--radius:22px;
+}
+html{background:#03040d}
+body{
+ background:
+  radial-gradient(ellipse at 4% 4%,rgba(0,245,233,.18),transparent 28%),
+  radial-gradient(ellipse at 96% 5%,rgba(168,85,247,.22),transparent 30%),
+  radial-gradient(ellipse at 52% 100%,rgba(52,80,220,.17),transparent 38%),
+  linear-gradient(145deg,#03040d 0%,#09091c 48%,#101027 100%);
+ background-attachment:fixed;
+}
+body:before{background:linear-gradient(transparent 0 96%,rgba(66,245,233,.035) 100%)}
+body:after{
+ content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+ background-image:linear-gradient(rgba(130,144,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(130,144,255,.035) 1px,transparent 1px);
+ background-size:34px 34px;
+ mask-image:linear-gradient(to bottom,black,transparent 90%);
+}
+main{max-width:1320px;padding-top:24px}
+header{padding:24px 12px 28px}
+header h1{font-size:clamp(30px,4vw,43px);font-weight:1000;letter-spacing:-.06em;text-shadow:0 0 30px rgba(66,245,233,.22),0 4px 25px rgba(168,85,247,.14)}
+header:after{height:2px;background:linear-gradient(90deg,#42f5e9 0%,#8b5cf6 48%,rgba(255,92,145,0) 100%);box-shadow:0 0 15px rgba(66,245,233,.25)}
+h2{font-size:clamp(19px,2vw,23px);font-weight:900;letter-spacing:-.035em}
+.card{
+ background:linear-gradient(145deg,rgba(24,23,56,.97) 0%,rgba(13,14,37,.98) 52%,rgba(8,10,27,.99) 100%);
+ border:1px solid rgba(151,134,255,.29);border-radius:22px;
+ box-shadow:0 24px 65px rgba(0,0,0,.42),0 0 0 1px rgba(66,245,233,.025),inset 0 1px 0 rgba(255,255,255,.085);
+ backdrop-filter:blur(22px) saturate(145%);
+}
+.card:before{height:3px;background:linear-gradient(90deg,#42f5e9 0%,#8b5cf6 50%,rgba(255,92,145,0) 100%);opacity:.9}
+.card:after{content:"";position:absolute;inset:1px;pointer-events:none;border-radius:inherit;background:linear-gradient(125deg,rgba(255,255,255,.045),transparent 25%,transparent 70%,rgba(139,92,246,.035))}
+.card>h2:after{height:2px;background:linear-gradient(90deg,rgba(66,245,233,.35),rgba(139,92,246,.2),transparent)}
+button{
+ border:1px solid rgba(174,166,255,.36);
+ border-radius:13px;
+ background:linear-gradient(180deg,#39365f 0%,#201f42 48%,#171831 100%);
+ color:#fff;font-weight:900;letter-spacing:.01em;
+ box-shadow:0 8px 0 rgba(4,4,16,.55),0 12px 26px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.23),inset 0 -2px 0 rgba(0,0,0,.25);
+}
+button:before{content:"";position:absolute;left:9%;right:9%;top:1px;height:2px;pointer-events:none;border-radius:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.72),transparent);opacity:.7}
+button:hover{transform:translateY(-2px);border-color:rgba(66,245,233,.72);box-shadow:0 10px 0 rgba(4,4,16,.48),0 16px 34px rgba(0,0,0,.4),0 0 22px rgba(66,245,233,.12),inset 0 1px 0 rgba(255,255,255,.3)}
+button:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(4,4,16,.55),0 6px 12px rgba(0,0,0,.28)}
+button.active,button.primary{
+ color:#071322;background:linear-gradient(135deg,#76fff3 0%,#42dff0 38%,#a7a5ff 100%);
+ border-color:rgba(255,255,255,.62);
+ box-shadow:0 7px 0 #25274f,0 12px 30px rgba(66,245,233,.22),0 0 25px rgba(66,245,233,.16),inset 0 2px 0 rgba(255,255,255,.75),inset 0 -2px 0 rgba(54,79,177,.18);
+ text-shadow:0 1px 0 rgba(255,255,255,.28)
+}
+button.good{background:linear-gradient(135deg,#42e7a0,#087e69);border-color:rgba(125,247,181,.55);box-shadow:0 7px 0 #083f3b,0 12px 25px rgba(30,220,153,.17),inset 0 1px 0 rgba(255,255,255,.35)}
+button.danger{background:linear-gradient(135deg,#ff649b,#822d69);border-color:rgba(255,139,192,.48);box-shadow:0 7px 0 #421d45,0 12px 25px rgba(255,92,145,.14),inset 0 1px 0 rgba(255,255,255,.28)}
+.tabs{padding:7px;gap:9px;border-radius:18px;background:rgba(6,7,23,.91);border:1px solid rgba(154,137,255,.35);box-shadow:0 17px 38px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(24px) saturate(160%)}
+.tabs button{border-radius:12px;padding:13px 15px;color:#aeb4d7;background:linear-gradient(180deg,rgba(39,37,76,.42),rgba(17,18,43,.55));border:1px solid transparent;box-shadow:none}
+.tabs button:before{display:none}
+.tabs button:hover{background:rgba(139,92,246,.14);border-color:rgba(139,92,246,.3);color:#fff}
+.tabs button.active{color:#071322;background:linear-gradient(110deg,#76fff3,#42dff0 45%,#b2a2ff);border-color:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(66,245,233,.13),0 6px 24px rgba(66,245,233,.19),inset 0 1px 0 rgba(255,255,255,.7)}
+.input,select{
+ color:#fff;background:linear-gradient(180deg,#090a20,#15152f);
+ border:1px solid rgba(150,143,220,.38);border-radius:13px;
+ box-shadow:inset 0 3px 8px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.045);
+}
+.input:hover,select:hover{border-color:rgba(66,245,233,.6)}
+.input:focus,select:focus{border-color:#42f5e9;box-shadow:0 0 0 4px rgba(66,245,233,.13),0 0 20px rgba(66,245,233,.07),inset 0 1px 0 rgba(255,255,255,.06)}
+.players .input{height:51px;font-size:16px;border-radius:15px}
+.objective,.bframe{
+ background:linear-gradient(135deg,rgba(28,27,62,.97),rgba(11,13,34,.99));
+ border:1px solid rgba(148,137,224,.27);border-radius:17px;
+ box-shadow:0 13px 30px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.055);
+}
+.objective:before,.bframe:before{width:4px;background:linear-gradient(180deg,#42f5e9 0%,#9b7cff 58%,#ff5c91 100%);box-shadow:0 0 13px rgba(66,245,233,.16)}
+.objective:hover,.bframe:hover{border-color:rgba(66,245,233,.52);box-shadow:0 18px 38px rgba(0,0,0,.38),0 0 24px rgba(139,92,246,.08),inset 0 1px 0 rgba(255,255,255,.08)}
+.num{color:#6ffff2;text-shadow:0 0 22px rgba(66,245,233,.38)}
+.game{font-size:1.03em;color:#fff}
+.playerbox{background:linear-gradient(145deg,rgba(18,20,48,.97),rgba(7,9,26,.99));border:1px solid rgba(147,139,222,.25);border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.playerbox label{color:#e3e1ff}
+.table{border:1px solid rgba(151,139,231,.34);border-radius:16px;background:rgba(5,7,22,.94);box-shadow:0 12px 32px rgba(0,0,0,.28)}
+.table th{background:linear-gradient(180deg,#29274f,#191a3a);color:#d9d8ff;border-bottom-color:rgba(151,139,231,.23)}
+.table td{border-color:rgba(143,151,205,.12)}
+.table tbody tr:nth-child(even) td{background:rgba(139,92,246,.045)}
+.table tbody tr:hover td{background:rgba(66,245,233,.085)}
+.table tbody tr:last-child td{background:linear-gradient(90deg,rgba(66,245,233,.11),rgba(139,92,246,.09))}
+.total{color:#6ffff2;text-shadow:0 0 18px rgba(66,245,233,.23)}
+.legend span{background:linear-gradient(135deg,rgba(139,92,246,.13),rgba(66,245,233,.045));border:1px solid rgba(147,139,222,.23);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.tipbtn{background:linear-gradient(135deg,#383568,#191a3d);border-color:rgba(66,245,233,.48);color:#e9ffff;box-shadow:0 4px 12px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.14)}
+.tipbox{background:linear-gradient(145deg,#19183a,#080a20);border:1px solid rgba(66,245,233,.4);box-shadow:0 28px 80px rgba(0,0,0,.68),0 0 28px rgba(139,92,246,.12),inset 0 1px 0 rgba(255,255,255,.07)}
+.tipbox h4{color:#8cfff5}
+#status{display:inline-block;background:linear-gradient(90deg,rgba(66,245,233,.08),rgba(139,92,246,.08));border:1px solid rgba(66,245,233,.22);color:#c4d5ed}
+#result{background:linear-gradient(135deg,rgba(11,70,59,.94),rgba(12,22,42,.98));border-color:rgba(125,247,181,.42);box-shadow:0 20px 58px rgba(0,0,0,.36),0 0 35px rgba(125,247,181,.08),inset 0 1px 0 rgba(255,255,255,.08)}
+.winner{color:#8bffc5;text-shadow:0 0 22px rgba(125,247,181,.2)}
+.offline-badge{background:linear-gradient(135deg,rgba(66,245,233,.1),rgba(139,92,246,.09));border-color:rgba(66,245,233,.3);box-shadow:0 8px 24px rgba(0,0,0,.27),inset 0 1px 0 rgba(255,255,255,.06)}
+#splashScreen{background:#03040d}
+::selection{background:rgba(66,245,233,.35);color:#fff}
+@media(max-width:760px){main{padding-top:14px}.card{border-radius:18px}header{padding-top:16px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
 </style>
 </head>
 <body><div id="splashScreen" aria-label="Pinhead Games loading screen"><img src="./pinhead-splash.webp" alt=""></div><main>
