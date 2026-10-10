@@ -1,4 +1,4 @@
-const C='pinhead-games-bowling-close-v19';;
+const C='pinhead-games-new-catalog-v20';;
 const ASSETS=['./','./index.html','./manifest.webmanifest','./pinhead-splash.webp','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./objective-packs.js','./objective-packs-2.js'];
 
 self.addEventListener('install',event=>{
