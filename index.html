@@ -118,11 +118,11 @@ button.danger{background:linear-gradient(135deg,#6a263d,#461b2b);border-color:rg
 'use strict';
 var KEY='pinhead-games-v6';
 var ERA_GAME_CATALOG=[
-{era:'1970s',games:['Abra Ca Dabra (Gottlieb)','Atlantis (Gottlieb)','Big Brave (Gottlieb)','Black Jack (Bally)','Centigrade 37 (Gottlieb)','Combat (Gottlieb)','Dimension (Gottlieb)','Drop-A-Card (Gottlieb)','Eight Ball (Bally)','Firecracker (Bally)','Jacks Open (Gottlieb)','Jet Spin (Gottlieb)','Joker Poker (Gottlieb)','Jungle Queen (Gottlieb)','Lawman (Gottlieb)','Lucky Hand (Gottlieb)','Mata Hari (Bally)','Moon Flight (Gottlieb)','Olympic Hockey (Gottlieb)','Pop-A-Card (Gottlieb)','Quick Draw (Gottlieb)','Spanish Eyes (Williams)','Super-Flite (Gottlieb)','Super Spin (Gottlieb)']},
-{era:'1980s',games:['Banzai Run (Williams)','Black Hole (Gottlieb)','Black Knight 2000 (Williams)','Centaur (Bally)','Earthshaker (Williams)','Eight Ball Deluxe (Bally)','Elvira and the Party Monsters (Bally)','Fathom (Bally)','Firepower (Williams)','Flash Gordon (Bally)','High Speed (Williams)','Pinbot (Williams)','Quicksilver (Stern)','Seawitch (Stern)','Sorcerer (Williams)','Star Gazer (Stern)','Swords of Fury (Williams)','Taxi (Williams)','Time Machine (Data East)']},
-{era:'1990s',games:['Attack from Mars (Bally)','Big Bang Bar (Capcom)','Bram Stoker’s Dracula (Williams)','Cactus Canyon (Bally)','Cirqus Voltaire (Bally)','Creature from the Black Lagoon (Bally)','Fish Tales (Williams)','FunHouse (Williams)','Indiana Jones: The Pinball Adventure (Williams)','Medieval Madness (Williams)','Monster Bash (Williams)','Scared Stiff (Bally)','Star Trek: The Next Generation (Williams)','Tales of the Arabian Nights (Williams)','The Addams Family (Bally)','The Shadow (Bally)','Theatre of Magic (Bally)','Twilight Zone (Bally)','Whirlwind (Williams)','White Water (Williams)','World Cup Soccer (Bally)']},
+{era:'1970s',games:['Abra Ca Dabra (Gottlieb)','Atlantis (Gottlieb)','Big Brave (Gottlieb)','Black Jack (Bally)','Centigrade 37 (Gottlieb)','Combat (Gottlieb)','Dimension (Gottlieb)','Drop-A-Card (Gottlieb)','Eight Ball (Bally)','Firecracker (Bally)','Hulk (Gottlieb)','Jacks Open (Gottlieb)','Night Rider (Bally)','Jet Spin (Gottlieb)','Joker Poker (Gottlieb)','Jungle Queen (Gottlieb)','Lawman (Gottlieb)','Lucky Hand (Gottlieb)','Mata Hari (Bally)','Moon Flight (Gottlieb)','Olympic Hockey (Gottlieb)','Pop-A-Card (Gottlieb)','Quick Draw (Gottlieb)','Spanish Eyes (Williams)','Sinbad (Gottlieb)','Super-Flite (Gottlieb)','Super Spin (Gottlieb)']},
+{era:'1980s',games:['Andromeda (Game Plan)','Banzai Run (Williams)','Big Game (Stern)','Black Hole (Gottlieb)','Black Pyramid (Bally)','Black Knight 2000 (Williams)','Centaur (Bally)','Earthshaker (Williams)','Eight Ball Deluxe (Bally)','Elvira and the Party Monsters (Bally)','Fathom (Bally)','Firepower (Williams)','Flash Gordon (Bally)','High Speed (Williams)','Pinbot (Williams)','Quicksilver (Stern)','Seawitch (Stern)','Sorcerer (Williams)','Star Gazer (Stern)','Swords of Fury (Williams)','Taxi (Williams)','Time Machine (Data East)','Viking (Bally)']},
+{era:'1990s',games:['Attack from Mars (Bally)','Big Bang Bar (Capcom)','Bram Stoker’s Dracula (Williams)','Cactus Canyon (Bally)','Cirqus Voltaire (Bally)','Congo (Williams)','Creature from the Black Lagoon (Bally)','Fish Tales (Williams)','FunHouse (Williams)','Indiana Jones: The Pinball Adventure (Williams)','Medieval Madness (Williams)','Monster Bash (Williams)','Scared Stiff (Bally)','Star Trek: The Next Generation (Williams)','Tales of the Arabian Nights (Williams)','The Addams Family (Bally)','The Shadow (Bally)','Theatre of Magic (Bally)','Twilight Zone (Bally)','Whirlwind (Williams)','White Water (Williams)','World Cup Soccer (Bally)']},
 {era:'2000s',games:['Austin Powers (Stern)','Batman (The Dark Knight) (Stern)','CSI: Crime Scene Investigation (Stern)','Elvis (Stern)','Family Guy (Stern)','Indiana Jones (Stern)','Lord of the Rings (Stern)','Monopoly (Stern)','Nascar (Stern)','Pirates of the Caribbean (Stern)','Ripley’s Believe It or Not! (Stern)','RollerCoaster Tycoon (Stern)','Sharkey’s Shootout (Stern)','Shrek (Stern)','Spider-Man (Stern)','Terminator 3: Rise of the Machines (Stern)','The Simpsons Pinball Party (Stern)','The Sopranos (Stern)','World Poker Tour (Stern)']},
-
+{era:'2010s',games:['The Walking Dead (Stern)','Total Nuclear Annihilation (Spooky)']}
 ];
 function renderEraCatalog(){var sel=$('eraGameSelect');if(!sel)return;var current=sel.value;sel.innerHTML='<option value="">Choose a game…</option>';ERA_GAME_CATALOG.forEach(function(group){var og=document.createElement('optgroup');og.label=group.era;group.games.forEach(function(name){var op=document.createElement('option'),existingIndex=GAMES.findIndex(function(g){return g.name===name||name.indexOf(g.name+' (')===0});op.value=existingIndex>=0?'existing|'+existingIndex:group.era+'|'+name;op.textContent=name;og.appendChild(op)});sel.appendChild(og)});var existing=document.createElement('optgroup');existing.label='Existing Pinhead Games (playable)';GAMES.forEach(function(g,idx){if(idx>=9||idx===6||idx===7||idx===8)return;var op=document.createElement('option');op.value='existing|'+idx;op.textContent=g.name;existing.appendChild(op)});sel.appendChild(existing);if(current)sel.value=current;sel.onchange=function(){var v=this.value,box=$('eraGameDetails');if(!v){box.textContent='';return}var parts=v.split('|');if(parts[0]==='existing'){var idx=Number(parts[1]);box.textContent=S.course.indexOf(idx)>=0?GAMES[idx].name+' is already in this round.':GAMES[idx].name+' has a playable objective pack and can be added to this round.';return}box.textContent=parts[1]+' ('+parts[0]+'): objective pack available. Add it to your Pin Golf course and choose one of its objectives.'};$('addEraGame').onclick=function(e){e.preventDefault();try{addGolfGame()}catch(err){$('eraGameDetails').textContent='Could not add game: '+(err&&err.message?err.message:'unexpected error');console.error('Pin Golf add game failed:',err)}};renderSelectedGolfGames()}
 var GAMES=[
@@ -153,6 +153,151 @@ function catalogObjectivePack(label,era){
   var base=catalogBaseName(label);
   var lower=base.toLowerCase();
   var specific={
+    'the getaway: high speed ii':[
+      ['Run the red light','Complete the stoplight sequence and start multiball.','Complete the green, yellow, then red stoplight target groups. When the lock is lit, shoot the lock shot to lock balls; the third lock starts multiball.'],
+      ['Collect a Redline Mania gear award','Advance the RPM/gear sequence and collect a gear award.','Repeat the outer-loop/freeway shots to build RPM. When the display calls for a gear shift, shift and confirm the award.'],
+      ['Score a Supercharger award','Collect a value at the Supercharger.','Build the feature with the 1-2-3 targets, then shoot the Supercharger loop/ramp while the award is available.'],
+      ['Collect a Tunnel award','Collect an award at the Tunnel saucer.','Check the Tunnel insert and make the saucer shot while an award is lit; verify the display names or scores the award.'],
+      ['Start Video Mode','Start the driving video mode.','Advance the gear awards until Video Mode lights, then shoot the Tunnel/saucer to start it.'],
+      ['Collect a Jackpot','Collect a jackpot during multiball.','Start multiball by locking three balls, then shoot the Supercharger to light the Jackpot and make the indicated lock/loop shot to collect it.'],
+      ['Collect a Super Jackpot','Collect a Super Jackpot during multiball.','During multiball, build the Supercharger/loop sequence until the Super Jackpot is lit, then make the indicated jackpot shot.'],
+      ['Light an Extra Ball','Light the Extra Ball feature.','Advance the Freeway shots until the Extra Ball is lit at the Tunnel; confirm the insert or display indicates Extra Ball.'],
+      ['Collect Speed Millions','Score a Speed Millions award.','Make repeated inner-loop shots and collect Speed Millions while its timer is active. Confirm the score award on the display.'],
+      ['Start multiball and collect a Jackpot','Start multiball and collect at least one Jackpot in the same game.','Complete the stoplight/lock sequence to start multiball, then shoot the Supercharger and collect the lit Jackpot before multiball ends.']
+    ],
+    'andromeda':[
+      ['Light the power bumper','Light the power bumper feature.','Hit the stand-up targets that light the power bumper and verify the feature lamp changes.'],
+      ['Collect a saucer award','Make the left saucer shot.','Aim for the left saucer lane and confirm the saucer registers its score or feature award.'],
+      ['Complete the drop targets','Knock down the full drop-target bank.','Work through the drop targets until the entire bank is down; confirm the bank completion award.'],
+      ['Advance the spinner value','Advance the spinner value with a spinner shot.','Shoot the spinner lane and watch the spinner value advance on the playfield or display.'],
+      ['Light the extra-ball lane','Qualify the right return-lane extra-ball feature.','Complete the required target-bank progression and check the right return lane for the Extra Ball lamp.'],
+      ['Complete the target bank twice','Complete two full target-bank cycles in one game.','Drop the full bank, allow it to reset, then complete the bank a second time and confirm both completions.'],
+      ['Collect a lit saucer feature','Collect an award that is lit above the saucer.','Watch the rotating saucer award lamps, then make the saucer shot while the desired award is lit.'],
+      ['Advance bonus multiplier','Advance the bonus multiplier using the top lanes.','Complete the top rollover lanes and verify the end-of-ball bonus multiplier increases.'],
+      ['Collect the spinner award','Score a meaningful spinner sequence.','Make a controlled spinner shot and keep the ball in the lane long enough for multiple registered spins.'],
+      ['Earn an extra ball or special','Collect an Extra Ball or Special if enabled.','Progress the target-bank and return-lane features, then collect the lit award. Operator settings may disable these awards.']
+    ],
+    'big game':[
+      ['Complete a top lane','Complete one of the top rollover lanes.','Use a controlled plunge or upper-playfield feed and confirm a top lane registers.'],
+      ['Complete all top lanes','Complete the full set of top rollover lanes in one ball.','Track which lanes remain and use safe feeds to complete the missing lanes before draining.'],
+      ['Score a spinner shot','Register a spinner shot.','Aim for the spinner lane and verify the spinner scores.'],
+      ['Complete a drop-target bank','Knock down one complete drop-target bank.','Target the remaining standing targets until the whole bank is down and its award registers.'],
+      ['Light a feature at the saucer','Light a saucer feature and collect it.','Build progress with the playfield targets, watch the saucer award lamps, and shoot the saucer when lit.'],
+      ['Advance bonus multiplier','Increase the end-of-ball bonus multiplier.','Complete the lanes or targets that advance bonus X and verify the multiplier increases.'],
+      ['Collect a special or extra ball','Collect an enabled Special or Extra Ball.','Check the playfield inserts for the lit award and make its indicated shot; operator settings may disable it.'],
+      ['Complete two target banks','Complete two target-bank cycles during the game.','Finish a bank, let it reset, then clear it again and confirm both awards.'],
+      ['Collect a lit saucer award','Collect any currently lit saucer award.','Check the award lamps above the saucer and time the shot for the lit feature.'],
+      ['Combine lanes and targets','Complete a lane feature and a target-bank feature in one ball.','Complete at least one top lane and one full target bank before the same ball drains.']
+    ],
+    'black pyramid':[
+      ['Spell BLACK PYRAMID','Collect all letters in BLACK PYRAMID.','Use the orbit shots and stand-up targets to spot letters; track the letter inserts and complete the full sequence.'],
+      ['Advance bonus X','Increase the bonus multiplier using the right orbit.','Shoot the right orbit to advance bonus X and verify the next multiplier lights.'],
+      ['Collect a left-orbit award','Collect a value from the left orbit.','Shoot the left orbit while watching its rotating value; confirm the lit award is collected.'],
+      ['Complete the 200000 targets','Spell 200000 on the yellow target inserts.','Hit the yellow targets to light each digit in 200000; track missing digits on the playfield.'],
+      ['Collect the 200000 award','Collect the 200000 center-target award.','After spelling 200000, shoot the swinging center target while the award is lit.'],
+      ['Collect a top saucer award','Collect an award from the top saucer.','Watch the rotating saucer award lamps and make the saucer shot when an award is lit.'],
+      ['Complete BLACK PYRAMID twice','Complete a second BLACK PYRAMID letter sequence.','Finish the full letter sequence, then repeat the orbit/target process until all letters register again.'],
+      ['Reach 5× bonus','Advance bonus X to at least 5×.','Prioritize repeated right-orbit shots and check the bonus multiplier lamps after each qualifying hit.'],
+      ['Collect a high-value orbit award','Collect a high value from the left orbit.','Wait for a high-value lamp such as Extra Ball or Special if enabled; shoot the left orbit when that award is lit.'],
+      ['Spell letters and collect a saucer award','Complete letter progress and collect a lit saucer award in the same ball.','Work the letter inserts, then check the saucer lamps and collect one before the ball drains.']
+    ],
+    'congo':[
+      ['Complete the hieroglyphic targets','Complete the three-target hieroglyphic sequence.','Hit the three hieroglyphic targets to complete one picture; repeat the set as needed and confirm progress on the display.'],
+      ['Start Video Mode','Light and start Video Mode.','Complete the hieroglyphic target sequence the required number of times until Video Mode lights, then make the indicated start shot.'],
+      ['Collect a diamond','Collect one diamond award.','Use the lit shots/features that award diamonds and confirm the diamond count increases on the display.'],
+      ['Complete a drop-target bank','Knock down one full drop-target bank.','Target each remaining standing target until the bank is down and its award registers.'],
+      ['Start multiball','Start Congo multiball.','Build the required locks or feature progress shown by the inserts/display, then make the lit lock/start shot.'],
+      ['Collect a jackpot','Collect a jackpot during multiball.','Start multiball and shoot the currently lit jackpot shot; confirm the display awards the jackpot.'],
+      ['Collect a lit feature award','Collect an award from a lit Congo feature.','Read the playfield inserts and display, then shoot the indicated lit feature before it unlights.'],
+      ['Complete the hieroglyphic sequence twice','Complete two full hieroglyphic target sets.','Finish the three-target picture sequence twice and verify the game registers both completions.'],
+      ['Advance a multiball feature','Advance progress toward a multiball feature.','Prioritize the lit targets/locks and check the display for progress; only count a step when the machine confirms it.'],
+      ['Start multiball and score a jackpot','Start multiball and collect a jackpot in the same game.','Complete the machine’s lock/start sequence, then collect at least one lit jackpot before the multiball ends.']
+    ],
+    'firepower':[
+      ['Complete FIRE lanes','Complete the F-I-R-E rollover lanes.','Use the upper lanes to light the letters F, I, R, and E; verify each lane registers.'],
+      ['Complete the 1-2-3 targets','Knock down the 1-2-3 target bank.','Hit the three numbered targets until the bank is completed and the game registers the award.'],
+      ['Complete the 4-5-6 targets','Knock down the 4-5-6 target bank.','Hit each numbered target in the second bank and confirm the bank-completion award.'],
+      ['Start multiball','Start Firepower multiball.','Complete the required target/lock sequence shown by the inserts, then make the lit lock shot to start multiball.'],
+      ['Collect a jackpot','Collect a jackpot during multiball.','During multiball, make the lit jackpot shot and verify the display awards it.'],
+      ['Score a spinner sequence','Register multiple spinner hits.','Shoot the spinner lane and keep the ball moving through it for several registered spins.'],
+      ['Light a special or extra ball','Light an enabled Special or Extra Ball.','Advance the target and lane features, then follow the lit insert to collect the award if enabled.'],
+      ['Complete both target banks','Complete both the 1-2-3 and 4-5-6 target banks in one game.','Track each bank separately and finish both before the game ends.'],
+      ['Complete FIRE and a target bank','Complete FIRE lanes and one target bank in one ball.','Finish the upper F-I-R-E lanes and knock down one complete numbered target bank before draining.'],
+      ['Start multiball and collect a jackpot','Start multiball and collect at least one jackpot.','Qualify and start multiball, then make the lit jackpot shot before the multiball ends.']
+    ],
+    'night rider':[
+      ['Complete the top lanes','Complete the top rollover lanes.','Use a controlled plunge and upper-playfield feeds to complete the rollover lanes; confirm the lamps register.'],
+      ['Advance bonus multiplier','Increase the bonus multiplier.','Complete the lanes or targets that advance bonus X and check the multiplier inserts.'],
+      ['Score the spinner','Register a spinner shot.','Shoot through the spinner lane and confirm the spinner scores.'],
+      ['Complete a target bank','Knock down a full target bank.','Hit the remaining standing targets until the full bank is down.'],
+      ['Collect a saucer award','Collect an award from the saucer.','Watch the saucer’s rotating award lamps and shoot while an award is lit.'],
+      ['Light a special','Light the Special feature if enabled.','Advance the required lanes/targets and check for a Special insert; operator settings may disable it.'],
+      ['Reach a high bonus multiplier','Advance bonus X to at least 3×.','Prioritize repeated bonus-advancing lanes and targets and verify the multiplier reaches 3×.'],
+      ['Complete two target-bank cycles','Complete two full target-bank cycles.','Clear a bank, let it reset, and clear it again before the game ends.'],
+      ['Collect two saucer awards','Collect two separate saucer awards in one game.','Check the saucer lamps before each shot and confirm two awards register.'],
+      ['Complete lanes and targets in one ball','Complete a top lane and a target-bank feature in the same ball.','Finish one top lane and one complete target bank before the same ball drains.']
+    ],
+    'hulk':[
+      ['Complete the drop targets','Knock down the full drop-target bank.','Aim for the remaining standing drop targets and confirm the entire bank is down.'],
+      ['Advance bonus multiplier','Increase the end-of-ball bonus multiplier.','Complete the lanes/targets that advance bonus X and verify the multiplier lamps.'],
+      ['Score a spinner shot','Register a spinner shot.','Shoot through the spinner lane and confirm one or more spins score.'],
+      ['Collect a saucer award','Collect a lit saucer award.','Watch the saucer’s rotating award lamps and shoot while the desired award is lit.'],
+      ['Light an extra ball or special','Light an enabled Extra Ball or Special.','Advance the relevant targets/features and follow the lit insert; awards depend on operator settings.'],
+      ['Complete two target banks','Complete the target bank twice.','Clear the bank, allow it to reset, then clear it again and confirm both completions.'],
+      ['Reach 3× bonus','Advance bonus multiplier to at least 3×.','Prioritize the bonus-advancing lanes and targets and verify the multiplier reaches 3×.'],
+      ['Collect two saucer awards','Collect two separate saucer awards in one game.','Check the award lamps each time and confirm two successful saucer awards.'],
+      ['Complete a lane and target bank','Complete a lane feature and one full target bank in one ball.','Finish one rollover/lane feature and clear the drop-target bank before draining.'],
+      ['Collect a lit feature award','Collect any lit playfield feature award.','Check the inserts and display, then make the corresponding shot while the feature remains lit.']
+    ],
+    'sinbad':[
+      ['Complete a drop-target bank','Knock down the full drop-target bank.','Hit each remaining drop target until the bank is down and the completion registers.'],
+      ['Advance bonus multiplier','Increase the bonus multiplier.','Complete bonus-advancing lanes or targets and confirm the multiplier increases.'],
+      ['Collect a saucer award','Collect a lit saucer award.','Watch the saucer award lamps and make the saucer shot when an award is lit.'],
+      ['Score a spinner hit','Register a spinner hit.','Shoot the spinner lane and confirm the score or spinner value advances.'],
+      ['Light the extra-ball feature','Light Extra Ball if enabled.','Advance the required targets/features and check the Extra Ball insert; operator settings may disable the award.'],
+      ['Complete two drop-target banks','Complete two full drop-target-bank cycles.','Clear the bank, let it reset, and clear it a second time.'],
+      ['Reach 3× bonus','Advance bonus multiplier to at least 3×.','Prioritize bonus-advancing lanes/targets and verify the multiplier reaches 3×.'],
+      ['Collect two saucer awards','Collect two saucer awards in one game.','Check the rotating award lamps before each saucer shot and confirm both awards.'],
+      ['Complete a lane and target bank','Complete a lane feature and a full target bank in one ball.','Finish a rollover/lane feature and clear the target bank before the same ball drains.'],
+      ['Collect a special or extra ball','Collect an enabled Special or Extra Ball.','Check the inserts and make the indicated shot; the operator may have disabled these awards.']
+    ],
+    'sorcerer':[
+      ['Complete the top lanes','Complete the top rollover lanes.','Use a controlled plunge and upper-playfield feeds to complete the lanes and verify the lamps.'],
+      ['Complete a drop-target bank','Knock down the full drop-target bank.','Target the remaining standing drop targets until the bank is down.'],
+      ['Advance bonus multiplier','Increase bonus X.','Complete the lanes/targets that advance the end-of-ball bonus multiplier and confirm the next value.'],
+      ['Score a spinner shot','Register a spinner shot.','Aim for the spinner lane and confirm the spinner scores.'],
+      ['Collect a saucer award','Collect an award from the saucer.','Check the rotating saucer award lamps and shoot when the desired award is lit.'],
+      ['Light a special or extra ball','Light an enabled Special or Extra Ball.','Advance the required playfield features and follow the lit insert; operator settings may disable the award.'],
+      ['Complete two target banks','Complete two full target-bank cycles.','Clear the bank, let it reset, then clear it again before the game ends.'],
+      ['Reach 3× bonus','Advance bonus X to at least 3×.','Prioritize bonus-advancing lanes and targets and verify the multiplier reaches 3×.'],
+      ['Collect two saucer awards','Collect two separate saucer awards in one game.','Check the saucer lamps before each shot and confirm both awards register.'],
+      ['Combine lane and target progress','Complete a lane feature and a target-bank feature in one ball.','Complete a rollover/lane feature and a full target bank before the same ball drains.']
+    ],
+    'total nuclear annihilation':[
+      ['Destroy Reactor 1','Complete the reactor sequence and destroy Reactor 1.','Qualify Reactor 1 by completing the CORE grid, start it at the scoop, advance its status to critical in the upper reactor area, then hit the flashing destruction shots.'],
+      ['Complete a hands-free skill shot','Make the selected CORE rollover without flipping after plunge.','Before plunging, use the flippers to select the desired lit lane. Plunge and let the ball pass through it without changing the selection after launch.'],
+      ['Qualify a reactor','Complete the CORE rollover grid to qualify the next reactor.','Track the lit CORE letters/lanes and complete the grid; use the scoop when the display indicates the reactor is ready.'],
+      ['Advance a reactor to critical','Raise a started reactor to 100%.','After starting a reactor, use the upper-playfield feeds and lit shots to advance the reactor status until the display reaches 100%/critical.'],
+      ['Destroy a reactor','Complete the flashing-shot sequence on a critical reactor.','Once the reactor is critical, hit each randomly lit flashing destruction target shown by the inserts/display.'],
+      ['Collect a Reactor Jackpot','Complete the red CORE grid while a reactor is running.','During an active reactor, complete the CORE grid as it fills red, then verify the Reactor Jackpot is awarded.'],
+      ['Start multiball','Start a TNA multiball.','Qualify and lock balls using the lit lock/drop-target feature, then make the indicated lock shot to start multiball.'],
+      ['Collect a multiball jackpot','Collect a lit jackpot during multiball.','During multiball, shoot a lit jackpot shot and verify the display registers the award.'],
+      ['Destroy two reactors','Destroy two reactors in one game.','Complete qualify, start, critical-status, and destruction steps for one reactor, then repeat for the next reactor.'],
+      ['Destroy a reactor and collect a jackpot','Destroy a reactor and collect a Reactor Jackpot in the same game.','Finish a reactor by hitting its flashing destruction shots, then complete the red CORE grid during a running reactor to collect its jackpot.']
+    ],
+    'the walking dead':[
+      ['Complete a Dead Feature','Start and complete one Dead Feature mode.','Complete the drop-target bank enough times to qualify a mode, then shoot its flashing mode shot. Follow the display and finish the mode before time expires.'],
+      ['Collect a supply','Collect one of the supplies: First Aid, Weapons, or Food.','Complete the drop targets when a supply is lit and verify the display awards the supply.'],
+      ['Start Prison Multiball','Start Prison Multiball.','Open the prison doors and complete the required lit drop-target/lock sequence; shoot the lit lock shot to start Prison Multiball.'],
+      ['Start Well Walker Multiball','Start Well Walker Multiball.','Qualify the Well Walker feature using the displayed targets/supplies, then shoot the lit Well shot to start multiball.'],
+      ['Start Blood Bath Multiball','Start Blood Bath.','Collect the required supplies and complete the drop-target progress until Blood Bath is qualified, then make the indicated start shot.'],
+      ['Start the Barn Dead Feature','Start Barn mode at the left orbit.','Qualify Dead Features with the drop-target bank, then shoot the left orbit when Barn is flashing.'],
+      ['Start the CDC Dead Feature','Start CDC mode at the left ramp.','Qualify Dead Features, then shoot the left ramp when CDC is flashing.'],
+      ['Collect a Multi-Kill','Qualify and collect a Multi-Kill.','Complete enough qualifying mode shots, multiball jackpots, or other listed tasks until a yellow Multi-Kill insert lights; shoot that lit shot.'],
+      ['Start Horde','Qualify and start Horde mode.','Light all required Multi-Kill inserts, then shoot the Woodbury shot when Horde is flashing.'],
+      ['Collect a skill shot','Make the lit-lane skill shot.','Before plunging, use the flippers to select the lit lane; plunge so the ball passes through that lane and verify the display awards the skill shot.']
+    ]
+  };
     'black jack':[
       ['Complete one top suit lane','Complete one of the four top suit lanes.','Use a controlled shot or upper-playfield feed to roll through a top suit lane. Confirm the corresponding suit insert registers.'],
       ['Complete all four suit lanes','Complete all four top suit lanes.','Track which suit inserts are still unlit and prioritize the missing lanes. Confirm all four register before the ball drains.'],
@@ -268,6 +413,7 @@ var BOWLING_TARGET_OVERRIDES={
   'scared stiff':500000000,'star trek the next generation':1000000000,'tales of the arabian nights':500000000,
   'the addams family':500000000,'the shadow':500000000,'theatre of magic':500000000,'twilight zone':750000000,
   'whirlwind':300000000,'white water':500000000,'world cup soccer':500000000,
+  'the getaway high speed ii':300000000,'congo':300000000,'andromeda':10000000,'big game':10000000,'black pyramid':10000000,'night rider':100000,'hulk':100000,'sinbad':100000,'viking':10000000,'total nuclear annihilation':100000000,'the walking dead':500000000,
   'austin powers':300000000,'batman the dark knight':750000000,'csi crime scene investigation':500000000,'elvis':300000000,
   'family guy':500000000,'indiana jones':1000000000,'lord of the rings':1000000000,'monopoly':300000000,'nascar':500000000,
   'pirates of the caribbean':500000000,'ripley s believe it or not':500000000,'rollercoaster tycoon':500000000,
